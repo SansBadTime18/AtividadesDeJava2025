@@ -3,8 +3,37 @@ package br.edu.fatecpg.tecpprog.estruturada.model;
 public class Carro {
 	public String cor;
 	public String modelo;
-	public double CapacidadeTanque;
+	public double capacidadeTanque;
 	public boolean ligado = false;
+	
+	public String getCor() {
+		return cor;
+	}
+	
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+	
+	public String getModelo() {
+		return modelo;
+	}
+	
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	
+	public double getCapacidadeTanque() {
+		return capacidadeTanque;
+	}
+	
+	public void setCapacidadeTanque(double capacidadeTanque) {
+		this.capacidadeTanque = capacidadeTanque;
+	}
+	
+	public double calcularCustoEncherTanque(double valorLitro) {
+		return capacidadeTanque * valorLitro;
+	}
+	
 	public void ligar() {
 		if(ligado) {
 			System.out.println("O carro está ligado");
@@ -13,6 +42,7 @@ public class Carro {
 			ligado = true;
 		}
 	}
+	
 	public void acelerar() {
 		if(ligado) {
 			System.out.println("Acelerando...");
@@ -20,6 +50,7 @@ public class Carro {
 			System.out.println("O carro está desligado");
 		}
 	}
+	
 	public void frear() {
 		if(ligado) {
 			System.out.println("Freando...");
@@ -27,13 +58,15 @@ public class Carro {
 			System.out.println("O carro está desligado");
 		}
 	}
+	
 	public void buzinar() {
 		if(ligado) {
-			System.out.println("BI BI BI BI");
+			System.out.println("Buzinando");
 		}else {
 			System.out.println("O carro está desligado");
 		}
 	}
+	
 	public void desligar() {
 		if(ligado) {
 			System.out.println("Desligando...");
