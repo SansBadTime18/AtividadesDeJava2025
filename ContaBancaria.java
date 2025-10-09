@@ -1,37 +1,33 @@
-package br.edu.fatecpg.tecpprog.estruturada.model;
-
+package br.edu.fatecpg.tipoC;
 public class ContaBancaria {
     private String titular;
+    private int numeroConta;
     private double saldo;
-
-    public ContaBancaria(String titular) {
-        this.titular = titular;
-        this.saldo = 0.0;
-    }
-
     public String getTitular() {
         return titular;
     }
-
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+    public int getNumeroConta() {
+        return numeroConta;
+    }
+    public void setNumeroConta(int numeroConta) {
+        this.numeroConta = numeroConta;
+    }
     public double getSaldo() {
         return saldo;
     }
-
-    public void depositar(double valor) {
-        if (valor > 0) {
-            saldo += valor;
-            System.out.println("Depósito de R$ " + valor + " realizado com sucesso.");
-        } else {
-            System.out.println("Valor de depósito inválido.");
-        }
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
-
-    public void sacar(double valor) {
-        if (valor > 0 && valor <= saldo) {
-            saldo -= valor;
-            System.out.println("Saque de R$ " + valor + " realizado com sucesso.");
-        } else {
-            System.out.println("Saque não permitido. Verifique o valor ou saldo insuficiente.");
-        }
+    public static void main(String[] args) {
+        ContaBancaria conta = new ContaBancaria();
+        conta.setTitular("Maria");
+        conta.setNumeroConta(12345);
+        conta.setSaldo(2500.00);
+        System.out.println("Titular: " + conta.getTitular());
+        System.out.println("Conta: " + conta.getNumeroConta());
+        System.out.println("Saldo: R$" + conta.getSaldo());
     }
 }
